@@ -1,104 +1,86 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { Menu, X, Code2 } from "lucide-react";
 
 const NAV_LINKS = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Education", href: "#education" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Certifications", href: "#certifications" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
+  { name: "Certifications", href: "/certifications" },
+  { name: "Coding Profiles", href: "/coding-profiles" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      // Scroll spy
-      const sections = NAV_LINKS.map(link => link.href.substring(1));
-      let current = "";
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element && window.scrollY >= element.offsetTop - 100) {
-          current = section;
-        }
-      }
-      setActiveSection(current);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (href: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      window.scrollTo({
-        top: (element as HTMLElement).offsetTop - 80,
-        behavior: "smooth"
-      });
-    }
-  };
+  const isActive = (href: string) =>
+    href === "/" ? location === "/" : location.startsWith(href);
+
+  const hasToken = !!localStorage.getItem("auth_token");
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/40 py-4" : "bg-transparent py-6"
+        isScrolled
+          ? "bg-background/90 backdrop-blur-xl border-b border-border/40 py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a 
-          href="#hero" 
-          onClick={(e) => { e.preventDefault(); scrollTo("#hero"); }}
-          className="text-xl font-bold tracking-tighter text-foreground"
-        >
-          ALEX<span className="text-primary">.</span>
-        </a>
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-foreground group">
+          <Code2 size={22} className="text-primary group-hover:rotate-12 transition-transform" />
+          <span>Sanket<span className="text-primary">.</span></span>
+        </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-              className={`text-sm font-medium transition-colors hover:text-primary relative ${
-                activeSection === link.href.substring(1) ? "text-primary" : "text-muted-foreground"
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors relative ${
+                isActive(link.href)
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               }`}
             >
               {link.name}
-              {activeSection === link.href.substring(1) && (
-                <motion.span
-                  layoutId="activeNav"
-                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              )}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-            className="ml-2 px-5 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-full hover:bg-primary/90 transition-colors"
-          >
-            Hire Me
-          </a>
+          {hasToken ? (
+            <Link
+              href="/dashboard"
+              className="ml-2 px-4 py-2 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="ml-2 px-4 py-2 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Login
+            </Link>
+          )}
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          className="lg:hidden text-foreground p-2"
+        <button
+          className="xl:hidden text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -108,23 +90,44 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-card border-b border-border/40 p-6 shadow-xl lg:hidden flex flex-col gap-4"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 bg-card border-b border-border/40 p-6 shadow-xl xl:hidden flex flex-col gap-2"
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                className={`text-lg font-medium transition-colors ${
-                  activeSection === link.href.substring(1) ? "text-primary" : "text-muted-foreground"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`px-3 py-3 text-base font-medium rounded-md transition-colors ${
+                  isActive(link.href)
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
+            <div className="mt-2 pt-2 border-t border-border/50">
+              {hasToken ? (
+                <Link
+                  href="/dashboard"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

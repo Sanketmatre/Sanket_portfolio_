@@ -30,3 +30,9 @@ id = "tyy1QeiPV7DuUOFnfEBGZ"
 uri = "file://artifacts/fresher-portfolio/src/assets/project3.png"
 type = "image"
 title = "Mobile app interface mockup"
+
+[[generated]]
+id = "3nq6Ww3VYYEMHBhkU7zdB"
+uri = "file://artifacts/fresher-portfolio/src/assets/hero-visual.png"
+type = "image"
+title = "abstract code hero visual"

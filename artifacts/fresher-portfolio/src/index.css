@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -23,26 +23,20 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
-
+  
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
-
+  
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted-border: var(--muted-border);
-
+  
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent-border: var(--accent-border);
-
+  
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-destructive-border: var(--destructive-border);
 
   --font-sans: var(--app-font-sans);
-  --font-serif: var(--app-font-serif);
   --font-mono: var(--app-font-mono);
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -52,74 +46,72 @@
 }
 
 :root {
-  /* Dark Navy & Electric Blue Theme */
-  --background: 222 47% 11%;
+  --background: 226 45% 6%;
   --foreground: 210 40% 98%;
 
-  --card: 222 47% 15%;
+  --card: 226 40% 9%;
   --card-foreground: 210 40% 98%;
-  --card-border: 217 32% 17%;
+  --card-border: 226 30% 15%;
 
-  --popover: 222 47% 15%;
+  --popover: 226 40% 9%;
   --popover-foreground: 210 40% 98%;
-  --popover-border: 217 32% 17%;
+  --popover-border: 226 30% 15%;
 
-  --primary: 199 89% 48%; /* Electric Cyan */
-  --primary-foreground: 222 47% 11%;
+  --primary: 221 83% 53%; /* Electric Blue */
+  --primary-foreground: 210 40% 98%;
   
-  --secondary: 217 32% 25%;
+  --secondary: 226 30% 15%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 217 32% 17%;
+  --muted: 226 30% 15%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  --accent: 199 89% 48%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 258 90% 66%; /* Violet Accent */
+  --accent-foreground: 210 40% 98%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 32% 17%;
-  --input: 217 32% 17%;
-  --ring: 199 89% 48%;
+  --border: 226 30% 15%;
+  --input: 226 30% 15%;
+  --ring: 221 83% 53%;
 
-  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
-  --app-font-serif: Georgia, serif;
-  --app-font-mono: 'Space Mono', monospace;
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-mono: 'JetBrains Mono', monospace;
   
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: 222 47% 11%;
+  --background: 226 45% 6%;
   --foreground: 210 40% 98%;
 
-  --card: 222 47% 15%;
+  --card: 226 40% 9%;
   --card-foreground: 210 40% 98%;
-  --card-border: 217 32% 17%;
+  --card-border: 226 30% 15%;
 
-  --popover: 222 47% 15%;
+  --popover: 226 40% 9%;
   --popover-foreground: 210 40% 98%;
-  --popover-border: 217 32% 17%;
+  --popover-border: 226 30% 15%;
 
-  --primary: 199 89% 48%;
-  --primary-foreground: 222 47% 11%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
   
-  --secondary: 217 32% 25%;
+  --secondary: 226 30% 15%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 217 32% 17%;
+  --muted: 226 30% 15%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  --accent: 199 89% 48%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 258 90% 66%;
+  --accent-foreground: 210 40% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 32% 17%;
-  --input: 217 32% 17%;
-  --ring: 199 89% 48%;
+  --border: 226 30% 15%;
+  --input: 226 30% 15%;
+  --ring: 221 83% 53%;
 }
 
 @layer base {
@@ -134,18 +126,25 @@
   }
 }
 
-/* Noise overlay */
 .bg-noise {
   position: relative;
 }
 .bg-noise::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 10;
-  opacity: 0.03;
+  z-index: 50;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Glassmorphism utilities */
+.glass {
+  @apply bg-background/60 backdrop-blur-md border-b border-border;
+}
+.glass-card {
+  @apply bg-card/40 backdrop-blur-sm border border-white/5;
 }
