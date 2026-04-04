@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "mNfmhB0NV8LR1fHy_0BJL"
+uri = "file://artifacts/fresher-portfolio/src/assets/hero-bg.png"
+type = "image"
+title = "Dark abstract technology background"
+
+[[generated]]
+id = "4Pc8PAwUCxZ3e8oHPUByj"
+uri = "file://artifacts/fresher-portfolio/src/assets/avatar.png"
+type = "image"
+title = "Professional minimal avatar"
+
+[[generated]]
+id = "Z6PCy0lIX8k0R4QWjXcM2"
+uri = "file://artifacts/fresher-portfolio/src/assets/project1.png"
+type = "image"
+title = "Modern dashboard app mockup"
+
+[[generated]]
+id = "Fgm9olgFov6kE4o0n7u5V"
+uri = "file://artifacts/fresher-portfolio/src/assets/project2.png"
+type = "image"
+title = "E-commerce platform mockup"
+
+[[generated]]
+id = "tyy1QeiPV7DuUOFnfEBGZ"
+uri = "file://artifacts/fresher-portfolio/src/assets/project3.png"
+type = "image"
+title = "Mobile app interface mockup"

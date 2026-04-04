@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Fresher Portfolio"
+version = "1.0.0"
+id = "artifacts/fresher-portfolio"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25057
+
+[services.development]
+run = "pnpm --filter @workspace/fresher-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/fresher-portfolio", "run", "build" ]
+publicDir = "artifacts/fresher-portfolio/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25057"
+BASE_PATH = "/"

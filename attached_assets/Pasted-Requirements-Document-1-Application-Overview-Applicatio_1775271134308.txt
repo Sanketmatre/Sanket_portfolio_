@@ -1,0 +1,236 @@
+Requirements Document
+1. Application Overview
+Application Name: Sanket Matre — Professional Portfolio
+Description: A professional, visually polished personal portfolio website for Sanket Matre, showcasing skills, projects, experience, education, certifications, achievements, and coding profiles drawn from the provided resume. The site features a modern dark-themed aesthetic with smooth animations, typing effects, project filtering, user authentication (login & registration), and a personal dashboard. Designed to position Sanket as a job-ready software engineer.
+Reference File:
+Resume: matre_sanket_resume.pdf — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/20260328/file-akf2jdm9am80.pdf
+Resume Image: matre_sanket_resume_page-0001.jpg — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/conv-akf2mg3zlou8/20260330/file-am6t2meuwd1c.jpg
+2. Users & Use Cases
+Target Users: Recruiters, hiring managers, collaborators, and anyone viewing Sanket Matre's professional profile.
+Core Use Cases:
+Visitors browse the portfolio to evaluate Sanket's skills, projects, experience, and achievements.
+Visitors download the resume directly from the site.
+Visitors register or log in to access the personal dashboard.
+Authenticated users view a personalized dashboard summarizing profile highlights.
+3. Page Structure & Core Features
+3.1 Page Overview
+Portfolio Website
+├── Home / Hero Page
+├── About Page
+├── Skills Page
+├── Projects Page
+│   └── Project Detail (FramDirect + other projects from resume)
+├── Experience & Education Page
+├── Certifications & Achievements Page
+├── Coding Profiles Page
+├── Contact Page
+├── Login Page
+├── Registration Page
+└── Dashboard Page (authenticated users only)
+3.2 Home / Hero Page
+Full-screen hero section with a left-right split layout: text content on the left, profile image or developer illustration on the right.
+Background: dark theme with a gradient or animated particle effect (e.g., subtle floating particles or a glowing gradient mesh).
+Fallback: if the background effect fails to render, display a static dark gradient hero background.
+Hero text content:
+Strong headline (large font size, name highlighted with accent color — blue or purple):
+Sanket Matre
+Role line directly below the headline:
+Software Developer / ENTC Engineer
+Value statement (1–2 lines, short and impactful):
+I build scalable web applications using Java, Python & modern frontend technologies — turning complex problems into clean, efficient solutions.
+Typing animation cycling through role titles below the value statement (e.g., Software Developer, Web Developer, Problem Solver, DSA Enthusiast).
+Keywords visually emphasized or displayed as inline tags: Data Structures, OOP, Web Development.
+Stats highlight row (small, clean stat badges below the value statement):
+5+ Projects
+100+ DSA Problems Solved
+Final Year Engineer
+Two CTA buttons only:
+View Projects — smooth scrolls to the Projects section.
+Download Resume — triggers a backend-handled file download of the resume (matre_sanket_resume_page-0001.jpg — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/conv-akf2mg3zlou8/20260330/file-am6t2meuwd1c.jpg); the file must be served as a downloadable attachment via the backend, not opened in a new browser tab.
+Both buttons include hover effects (e.g., glow, scale, or color shift).
+Social icon links (GitHub, LinkedIn, Email) — all clickable, sourced from resume, open in a new tab.
+LinkedIn icon links to: https://www.linkedin.com/in/sanket-matre-0126a2296/
+Smooth fade-in animation for all hero elements on page load.
+Sticky top navigation bar with links to all main pages.
+Smooth scroll navigation between sections.
+Typography: use Poppins or Inter as the primary font throughout the site.
+SEO title tag: Sanket Matre | Software Developer Portfolio.
+SEO meta description tag: Portfolio of Sanket Matre — Final Year ENTC Engineer and Software Developer skilled in Java, Python, Data Structures, OOP, and Web Development.
+3.3 About Page
+Professional photo placeholder (or initials avatar if no photo provided).
+Career-focused, keyword-rich bio paragraph. Example content:
+I am a final-year Electronics and Telecommunication Engineering student with strong knowledge in Data Structures, Object-Oriented Programming, and Web Development. I am passionate about building efficient software solutions and continuously improving my problem-solving skills.
+Keyword highlights displayed as tags or inline emphasis: Data Structures, OOP, Problem-solving, Software Development.
+Key highlights: location, current role/status, availability — sourced from resume.
+Download Resume button at the bottom of the section — triggers a backend-handled file download of the resume (matre_sanket_resume_page-0001.jpg — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/conv-akf2mg3zlou8/20260330/file-am6t2meuwd1c.jpg); the file must be served as a downloadable attachment via the backend, not opened in a new browser tab.
+3.4 Skills Page
+Skills divided into clearly labeled categories:
+Languages: Java, Python, JavaScript (and others from resume)
+Frontend: HTML, CSS, React (and others from resume)
+Backend: Flask, Node.js (and others from resume)
+Tools: Git, VS Code, MySQL (and others from resume)
+Each skill displayed with an icon and/or a visual progress bar indicating proficiency level.
+All skill data populated from the provided resume.
+3.5 Projects Page
+Filterable project grid with category/tech-stack filter tabs (e.g., All, Java, Python, React).
+FramDirect must be prominently featured as a highlighted/pinned project card.
+Each project card displays:
+Project title
+Tech stack badges
+Short problem statement
+Key features or impact (with quantified metrics where available, e.g., Reduced manual work by 80%)
+GitHub link button
+Live demo link button (if available)
+Hover effect on each card.
+Project detail view includes:
+Full description
+Problem statement
+Solution approach
+Features list
+Technologies used
+Outcomes/results with impact numbers
+GitHub link
+Live demo link (if available)
+Example project card structure (Student Management System):
+Tech: Java, MySQL, HTML, CSS
+Developed full-stack system to manage student records
+Implemented CRUD operations & authentication
+Reduced manual work by 80%
+3.6 Experience & Education Page
+Vertical timeline layout.
+Work experience / internship entries: company name, role, duration, key responsibilities — sourced from resume.
+Education entries: institution, degree, duration — sourced from resume.
+3.7 Certifications & Achievements Page
+Certifications section: list of certifications with name, issuing organization, and date — sourced from resume.
+Achievements section: notable academic or professional achievements — sourced from resume.
+3.8 Coding Profiles Page
+Displays clickable profile cards/icons for coding platforms:
+LeetCode
+HackerRank
+CodeChef
+Each card shows the platform name, icon, and links to Sanket's profile — sourced from resume.
+3.9 Contact Page
+Contact form: Name, Email, Message fields with basic validation.
+Display contact details from resume (email, LinkedIn, GitHub, etc.) with clickable icons.
+LinkedIn icon links to: https://www.linkedin.com/in/sanket-matre-0126a2296/
+Social icon links: GitHub, LinkedIn, Email.
+Form submission stores the message in the backend database with timestamp, sender name, and email.
+Download Resume button at the bottom — triggers a backend-handled file download of the resume (matre_sanket_resume_page-0001.jpg — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/conv-akf2mg3zlou8/20260330/file-am6t2meuwd1c.jpg); the file must be served as a downloadable attachment via the backend, not opened in a new browser tab.
+3.10 Login Page
+Email and password input fields.
+Submit button: Log In.
+Link to Registration page.
+Error message display for invalid credentials.
+On successful login, redirect to Dashboard.
+3.11 Registration Page
+Fields: Full Name, Email, Password, Confirm Password.
+Basic validation: required fields, email format, password match.
+Submit button: Register.
+On successful registration, redirect to Login page.
+Error message display for duplicate email or validation failures.
+3.12 Dashboard Page (Authenticated Only)
+Accessible only after login; unauthenticated access redirects to Login page.
+Displays a personalized welcome message: Welcome, [User Name].
+Dashboard widgets / summary cards:
+Profile summary (name, role, skills count).
+Projects count.
+Quick links: Edit Profile (placeholder), View Portfolio, Logout.
+Logout button: clears session and redirects to Home.
+4. Business Rules & Logic
+Authentication Flow:
+Registration creates a new user record in the backend database (hashed password).
+Login validates credentials against stored records and issues a session token or JWT.
+All dashboard routes are protected; unauthenticated requests are redirected to the Login page.
+Resume Data Binding:
+All content (skills, projects, experience, education, certifications, achievements, coding profiles, contact info) must be populated from the provided resume PDF: matre_sanket_resume.pdf.
+FramDirect must be explicitly listed as a project with full detail.
+Download Resume:
+All Download Resume buttons (Hero section, About section, Contact page) must trigger a backend-handled file download of the resume image file (matre_sanket_resume_page-0001.jpg — https://miaoda-conversation-file.s3cdn.medo.dev/user-akex0r626m80/conv-akf2mg3zlou8/20260330/file-am6t2meuwd1c.jpg).
+The backend must serve this file as a downloadable attachment (Content-Disposition: attachment), so the browser initiates a file download rather than opening the file in a new tab.
+The downloaded file name should be matre_sanket_resume_page-0001.jpg.
+LinkedIn Link:
+All LinkedIn icon/link references across the site (Hero section, Contact page, and any other occurrence) must point to: https://www.linkedin.com/in/sanket-matre-0126a2296/
+LinkedIn links must open in a new tab.
+Contact Form:
+Submitted messages are stored in the backend database with timestamp, sender name, and email.
+Project Filtering:
+Filter tabs on the Projects page filter displayed project cards by tech stack or category without page reload.
+Typing Animation:
+The hero section cycles through role titles using a typing animation effect.
+Social Links:
+All GitHub, LinkedIn, and Email links are sourced from the resume and open in a new tab.
+LinkedIn link is explicitly set to: https://www.linkedin.com/in/sanket-matre-0126a2296/
+Dark Theme:
+The site uses a dark theme with a blue/purple accent color as the default visual style.
+Typography:
+Poppins or Inter is used as the primary font throughout the site.
+The main heading (Sanket Matre) uses a larger font size and is highlighted with the accent color.
+Hover & Fade-in Animations:
+CTA buttons include hover effects (glow, scale, or color shift).
+Project cards and skill cards include hover effects.
+Navigation links include hover effects.
+Page sections animate into view on scroll (fade-in or slide-up).
+Hero elements fade in on page load.
+Hero Layout:
+Left-right split layout on desktop: text and stats on the left, profile image or developer illustration on the right.
+On mobile, stacks vertically with text above image.
+Stats Badges:
+The three stat items (5+ Projects, 100+ DSA Problems Solved, Final Year Engineer) are displayed as small highlight badges in the hero section.
+SEO:
+Each page includes an appropriate SEO title and meta description tags.
+Proper heading hierarchy (H1, H2, H3) is used throughout.
+Mobile Responsiveness:
+All pages and components are fully responsive across mobile, tablet, and desktop screen sizes.
+Hero layout stacks vertically on mobile.
+Navigation collapses to a hamburger menu on mobile.
+5. Exceptions & Edge Cases
+Scenario	Handling
+Login with incorrect credentials	Display error: Invalid email or password
+Registration with existing email	Display error: This email is already registered
+Password and confirm password mismatch	Display inline validation error
+Unauthenticated access to Dashboard	Redirect to Login page
+Contact form submitted with empty fields	Display required field validation errors
+Resume file download fails (backend error)	Download button shows fallback message: Resume temporarily unavailable
+Background particle/gradient effect fails to render	Fallback to a static dark gradient hero background
+GitHub or coding profile link not in resume	Hide the corresponding link/card rather than showing a broken link
+Project has no live demo link	Hide the Live Demo button for that project card
+Profile image not provided	Display initials avatar as placeholder
+6. Acceptance Criteria
+The homepage renders with a dark gradient or particle background, a left-right split hero layout, and the correct headline (Sanket Matre) with the name highlighted in accent color.
+The hero section displays the role line (Software Developer / ENTC Engineer), the value statement, and a typing animation cycling through role titles.
+Keywords (Data Structures, OOP, Web Development) are visually emphasized in the hero section.
+Three stat badges (5+ Projects, 100+ DSA Problems Solved, Final Year Engineer) are visible in the hero section.
+Exactly two CTA buttons are present in the hero section: View Projects and Download Resume, both functional and with hover effects.
+Clicking Download Resume triggers a backend-handled file download of matre_sanket_resume_page-0001.jpg; the file is downloaded to the user's device, not opened in a new tab.
+Social icon links (GitHub, LinkedIn, Email) are present, clickable, and sourced from the resume; the LinkedIn link points to https://www.linkedin.com/in/sanket-matre-0126a2296/ and opens in a new tab.
+Hero elements fade in smoothly on page load.
+Poppins or Inter font is applied consistently across all pages.
+All resume content (skills, projects including FramDirect, experience, education, certifications, achievements, coding profiles, contact) is accurately reflected across the corresponding pages.
+Skills are displayed in categorized groups with icons and/or progress bars.
+FramDirect is featured as a highlighted/pinned project card on the Projects page with full detail view.
+Each project card displays tech stack badges, problem statement, impact metrics, GitHub link, live demo link where available, and a hover effect.
+Project filtering by tech stack or category functions correctly without page reload.
+Certifications & Achievements page lists all relevant entries from the resume.
+Coding Profiles page displays clickable cards for LeetCode, HackerRank, and CodeChef.
+The About page contains a career-focused, keyword-rich bio with keyword tags.
+Download Resume button appears in the Hero section, About section, and Contact page; all trigger a backend-handled file download of matre_sanket_resume_page-0001.jpg.
+LinkedIn links across all pages point to https://www.linkedin.com/in/sanket-matre-0126a2296/ and open in a new tab.
+Users can successfully register with a new email and log in with valid credentials.
+Authenticated users can access the Dashboard; unauthenticated users are redirected to Login.
+The Dashboard displays a welcome message and profile summary.
+The Contact form validates inputs and stores submissions in the backend.
+The site uses a dark theme with blue/purple accent color, hover effects on cards and buttons, and scroll animations.
+All pages are fully mobile responsive; hero layout stacks vertically on mobile; navigation collapses to a hamburger menu on mobile.
+SEO title and meta description tags are present on all pages.
+Navigation between all pages is functional and smooth.
+7. Out of Scope (This Release)
+Admin panel or CMS for editing portfolio content dynamically.
+Social login (Google, GitHub OAuth).
+Multi-language support.
+Email notification on contact form submission.
+Resume parsing automation (content is manually extracted from the provided PDF).
+Payment or e-commerce features.
+Mobile app version.
+Theme toggle (dark/light mode switcher).
+Blog or articles section.
+Resume ATS optimization (handled externally, not within the application).
