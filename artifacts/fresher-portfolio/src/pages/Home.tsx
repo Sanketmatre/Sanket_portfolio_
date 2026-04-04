@@ -50,11 +50,15 @@ const fadeUp = {
 export default function Home() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),transparent)]" />
+      {/* Hero-specific background boost */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+        {/* Top radial spotlight */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_-10%,rgba(37,99,235,0.25),transparent_65%)]" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+        {/* Left edge glow */}
+        <div className="absolute inset-y-0 left-0 w-1/3 bg-[radial-gradient(ellipse_80%_80%_at_0%_50%,rgba(37,99,235,0.12),transparent)]" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 py-20">
@@ -82,7 +86,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-4"
             >
-              <span className="text-primary">Sanket</span>{" "}
+              <span className="text-primary glow-text">Sanket</span>{" "}
               <span className="text-foreground">Matre</span>
             </motion.h1>
 
@@ -199,7 +203,7 @@ export default function Home() {
           >
             <div className="relative w-[380px] h-[380px]">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
-              <div className="relative w-full h-full rounded-3xl border border-primary/20 bg-card/50 backdrop-blur overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-full rounded-3xl border border-primary/30 bg-card/60 backdrop-blur overflow-hidden flex items-center justify-center pulse-glow">
                 <div className="p-8 text-center space-y-4">
                   <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto">
                     <Code size={36} className="text-primary" />

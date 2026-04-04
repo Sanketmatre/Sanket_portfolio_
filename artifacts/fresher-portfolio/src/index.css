@@ -126,19 +126,22 @@
   }
 }
 
-.bg-noise {
-  position: relative;
+/* Dot-grid background pattern */
+.bg-grid {
+  background-image:
+    radial-gradient(circle, rgba(59,130,246,0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
-.bg-noise::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+/* Subtle diagonal line texture */
+.bg-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(59,130,246,0.03) 0px,
+    rgba(59,130,246,0.03) 1px,
+    transparent 1px,
+    transparent 10px
+  );
 }
 
 /* Glassmorphism utilities */
@@ -148,3 +151,41 @@
 .glass-card {
   @apply bg-card/40 backdrop-blur-sm border border-white/5;
 }
+
+/* Glow text effect */
+.glow-text {
+  text-shadow: 0 0 40px rgba(59,130,246,0.5), 0 0 80px rgba(59,130,246,0.2);
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(59,130,246,0.4) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59,130,246,0.3); }
+  50% { box-shadow: 0 0 50px rgba(59,130,246,0.6), 0 0 80px rgba(139,92,246,0.3); }
+}
+.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* Aurora / gradient orb */
+@keyframes aurora {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+  33% { transform: scale(1.1) translate(3%, -3%); opacity: 0.6; }
+  66% { transform: scale(0.95) translate(-2%, 2%); opacity: 0.5; }
+}
+.aurora { animation: aurora 8s ease-in-out infinite; }
