@@ -4,38 +4,48 @@ import { GraduationCap, Briefcase, Calendar } from "lucide-react";
 const EDUCATION = [
   {
     degree: "B.E. Electronics and Telecommunication Engineering",
-    institution: "University Institute of Technology",
-    period: "2021 – 2025",
+    institution: "Savitribai Phule Pune University (SPPU)",
+    period: "2022 – 2026",
     details: "Specialization in Software Development | Relevant coursework: Data Structures, Algorithms, OOP, Web Technology, DBMS, Computer Networks",
-    grade: "CGPA: 7.5+ (Expected)",
+    grade: "CGPA: 8.90",
   },
   {
     degree: "12th Grade (HSC)",
-    institution: "State Board",
-    period: "2020 – 2021",
+    institution: "Maharashtra State Board",
+    period: "Passout 2022",
     details: "Science stream with Mathematics and Computer Science",
-    grade: "Distinction",
+    grade: "75%",
   },
   {
     degree: "10th Grade (SSC)",
-    institution: "State Board",
-    period: "2018 – 2019",
+    institution: "Maharashtra State Board",
+    period: "Passout 2020",
     details: "Strong foundation in Mathematics and Science",
-    grade: "Distinction",
+    grade: "87.50%",
   },
 ];
 
 const EXPERIENCE = [
   {
-    role: "Seeking First Opportunity",
-    company: "Open to Work",
-    period: "Present",
-    type: "work",
+    role: "Full Stack Java Developer",
+    company: "Amdox Technologies",
+    period: "Jan 2026 – Apr 2026",
     details: [
-      "Actively building projects to strengthen portfolio",
-      "Contributing to open-source projects",
-      "Preparing for software engineering roles in full-stack development",
-      "Solved 100+ DSA problems to sharpen algorithmic thinking",
+      "Developed and maintained full-stack web applications using Java and Spring Boot",
+      "Built RESTful APIs consumed by React.js frontend components",
+      "Implemented Hibernate/JPA for database interactions with MySQL",
+      "Collaborated with team members on code reviews and feature delivery",
+    ],
+  },
+  {
+    role: "Web Developer Intern",
+    company: "CodeClause",
+    period: "Feb 2025 – Apr 2025",
+    details: [
+      "Designed and developed responsive web pages using HTML, CSS and JavaScript",
+      "Built interactive UI components and integrated them with backend APIs",
+      "Worked on client-facing projects and delivered features within sprint timelines",
+      "Gained practical experience in version control with Git and GitHub",
     ],
   },
 ];
