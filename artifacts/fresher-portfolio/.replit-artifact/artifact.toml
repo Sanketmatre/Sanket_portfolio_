@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "Fresher Portfolio"
+title = "Portfolio"
 version = "1.0.0"
 id = "artifacts/fresher-portfolio"
 router = "path"
