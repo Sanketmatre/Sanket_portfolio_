@@ -188,7 +188,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/sanket-matre-0126a2296/" target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all hover:scale-110">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:sanketmatre@email.com" className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all hover:scale-110">
+              <a href="mailto:matresanket00@gmail.com" className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-all hover:scale-110">
                 <Mail size={20} />
               </a>
             </motion.div>

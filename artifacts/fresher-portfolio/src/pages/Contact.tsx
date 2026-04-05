@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Download, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Download, Send, Phone } from "lucide-react";
 import { useSubmitContact } from "@workspace/api-client-react";
 import { toast } from "sonner";
 
@@ -113,7 +113,8 @@ export default function Contact() {
           <div className="p-6 rounded-2xl bg-card border border-border/50 space-y-5">
             <h3 className="text-lg font-bold text-foreground">Connect Directly</h3>
             {[
-              { icon: Mail, label: "Email", value: "sanketmatre@email.com", href: "mailto:sanketmatre@email.com" },
+              { icon: Mail, label: "Email", value: "matresanket00@gmail.com", href: "mailto:matresanket00@gmail.com" },
+              { icon: Phone, label: "Phone", value: "+91 9922611142", href: "tel:+919922611142" },
               { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sanket-matre-0126a2296", href: "https://www.linkedin.com/in/sanket-matre-0126a2296/" },
               { icon: Github, label: "GitHub", value: "github.com/sanketmatre", href: "https://github.com/sanketmatre" },
             ].map(({ icon: Icon, label, value, href }) => (

@@ -16,8 +16,8 @@ const PROFILES = [
   },
   {
     platform: "HackerRank",
-    username: "sanketmatre",
-    url: "https://hackerrank.com/sanketmatre",
+    username: "matresanket00",
+    url: "https://www.hackerrank.com/profile/matresanket00",
     color: "#2EC866",
     bg: "bg-[#2EC866]/10",
     border: "border-[#2EC866]/30",
