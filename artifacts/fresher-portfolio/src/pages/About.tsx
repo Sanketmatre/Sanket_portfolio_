@@ -8,7 +8,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay },
 });
 
-const KEYWORDS = ["Data Structures", "OOP", "Problem-solving", "Software Development", "Java", "Python", "Web Development"];
+const KEYWORDS = ["Java", "Spring Boot", "Hibernate", "React", "REST APIs", "MySQL", "OOP", "DSA"];
 const TRAITS = [
   { num: "01", label: "Problem Solver", desc: "Analytical approach to complex challenges" },
   { num: "02", label: "Fast Learner", desc: "Adapts quickly to new technologies" },
@@ -37,7 +37,7 @@ export default function About() {
             {[
               { icon: MapPin, label: "Location", value: "India" },
               { icon: GraduationCap, label: "Status", value: "Final Year Student" },
-              { icon: Briefcase, label: "Available for", value: "Full-time Roles" },
+              { icon: Briefcase, label: "Available for", value: "Full Stack Java Dev Roles" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border/50">
                 <Icon size={16} className="text-primary flex-shrink-0" />
@@ -60,10 +60,10 @@ export default function About() {
         {/* Bio */}
         <motion.div {...fadeUp(0.2)} className="space-y-6">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I am a final-year Electronics and Telecommunication Engineering student with strong knowledge in Data Structures, Object-Oriented Programming, and Web Development. I am passionate about building efficient software solutions and continuously improving my problem-solving skills.
+            I am a final-year ENTC Engineering student and a <span className="text-primary font-medium">Full Stack Java Developer</span> with strong hands-on experience in building end-to-end web applications. My backend stack centres around <span className="text-primary font-medium">Java, Spring Boot, Hibernate</span>, and REST APIs, while on the frontend I work with <span className="text-primary font-medium">React.js</span> to deliver responsive, user-friendly interfaces.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            My journey into software development started with curiosity about how systems work, which quickly evolved into a dedication to writing clean, scalable code. I enjoy taking on challenging problems and delivering solutions that make a real impact.
+            I am passionate about writing clean, maintainable code and continuously sharpening my problem-solving skills through Data Structures and Algorithms. I thrive on building real-world applications that solve genuine business problems — like my FramDirect project, which reduced distribution costs by 60%.
           </p>
 
           {/* Keywords */}

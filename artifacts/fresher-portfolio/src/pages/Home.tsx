@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { ArrowRight, Download, Github, Linkedin, Mail, Code, Braces, Database } from "lucide-react";
 import heroBg from "@/assets/hero-bg.png";
 
-const TYPING_ROLES = ["Software Developer", "Web Developer", "Problem Solver", "DSA Enthusiast"];
+const TYPING_ROLES = ["Full Stack Java Developer", "Backend Developer", "React Developer", "DSA Enthusiast"];
 
 function TypeWriter({ words }: { words: string[] }) {
   const [index, setIndex] = useState(0);
@@ -35,12 +35,12 @@ function TypeWriter({ words }: { words: string[] }) {
 }
 
 const STATS = [
-  { value: "5+", label: "Projects" },
+  { value: "5+", label: "Projects Built" },
   { value: "100+", label: "DSA Problems Solved" },
-  { value: "Final Year", label: "Engineer" },
+  { value: "Full Stack", label: "Java Developer" },
 ];
 
-const KEYWORDS = ["Data Structures", "OOP", "Web Development"];
+const KEYWORDS = ["Java", "Spring Boot", "React", "REST APIs"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -97,7 +97,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-xl md:text-2xl font-semibold text-muted-foreground mb-3"
             >
-              Software Developer / ENTC Engineer
+              Full Stack Java Developer / ENTC Engineer
             </motion.p>
 
             <motion.p
@@ -107,8 +107,8 @@ export default function Home() {
               variants={fadeUp}
               className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg"
             >
-              I build scalable web applications using Java, Python & modern frontend technologies —
-              turning complex problems into clean, efficient solutions.
+              I build robust, scalable web applications using <span className="text-primary font-medium">Java</span>, Spring Boot &amp; React —
+              delivering clean backend APIs and responsive frontend experiences end-to-end.
             </motion.p>
 
             <motion.div
@@ -212,8 +212,8 @@ export default function Home() {
                   <div className="space-y-2 text-left font-mono text-sm">
                     <p className="text-muted-foreground"><span className="text-accent">const</span> <span className="text-primary">dev</span> = {"{"}</p>
                     <p className="text-muted-foreground pl-4">name: <span className="text-green-400">"Sanket Matre"</span>,</p>
-                    <p className="text-muted-foreground pl-4">role: <span className="text-green-400">"Software Dev"</span>,</p>
-                    <p className="text-muted-foreground pl-4">skills: [<span className="text-yellow-400">Java, Python</span>],</p>
+                    <p className="text-muted-foreground pl-4">role: <span className="text-green-400">"Full Stack Java Dev"</span>,</p>
+                    <p className="text-muted-foreground pl-4">stack: [<span className="text-yellow-400">Java, Spring, React</span>],</p>
                     <p className="text-muted-foreground pl-4">open: <span className="text-blue-400">true</span></p>
                     <p className="text-muted-foreground">{"}"}</p>
                   </div>
@@ -230,14 +230,14 @@ export default function Home() {
                 transition={{ repeat: Infinity, duration: 3 }}
                 className="absolute -top-4 -right-4 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold shadow-lg"
               >
-                Java Developer
+                Spring Boot
               </motion.div>
               <motion.div
                 animate={{ y: [6, -6, 6] }}
                 transition={{ repeat: Infinity, duration: 3.5 }}
                 className="absolute -bottom-4 -left-4 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-semibold shadow-lg"
               >
-                DSA Enthusiast
+                React &amp; REST APIs
               </motion.div>
             </div>
           </motion.div>

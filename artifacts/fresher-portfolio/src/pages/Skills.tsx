@@ -9,35 +9,37 @@ const fadeUp = (delay = 0) => ({
 
 const SKILL_CATEGORIES = [
   {
-    category: "Languages",
+    category: "Java & Backend",
     skills: [
-      { name: "Java", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "C", level: 70 },
+      { name: "Java (Core & Advanced)", level: 92 },
+      { name: "Spring Boot", level: 85 },
+      { name: "Hibernate / JPA", level: 80 },
+      { name: "REST API Design", level: 88 },
+      { name: "JDBC", level: 82 },
     ],
   },
   {
     category: "Frontend",
     skills: [
-      { name: "HTML", level: 90 },
-      { name: "CSS", level: 85 },
-      { name: "React", level: 80 },
+      { name: "React.js", level: 82 },
+      { name: "HTML & CSS", level: 90 },
+      { name: "JavaScript (ES6+)", level: 82 },
     ],
   },
   {
-    category: "Backend",
+    category: "Databases",
     skills: [
-      { name: "Flask", level: 75 },
-      { name: "Node.js", level: 70 },
+      { name: "MySQL", level: 85 },
+      { name: "PostgreSQL", level: 75 },
+      { name: "MongoDB", level: 65 },
     ],
   },
   {
-    category: "Tools & Databases",
+    category: "Tools & Other",
     skills: [
-      { name: "Git", level: 85 },
-      { name: "MySQL", level: 80 },
-      { name: "VS Code", level: 90 },
+      { name: "Git & GitHub", level: 88 },
+      { name: "Python", level: 80 },
+      { name: "Data Structures & Algorithms", level: 85 },
     ],
   },
 ];
